@@ -53,4 +53,4 @@ GROUP BY c.customer_id
 ORDER BY lifetime_value DESC
 LIMIT 10;
 
-screenshots/CLV_result.png
+# screenshots/CLV_result.png
