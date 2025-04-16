@@ -42,3 +42,15 @@ cd ecommerce-sql-case-study
 #    – Import each CSV from data/ into its matching table
 
 # 3  Execute queries from sql/analysis_queries.sql
+
+-- Top 10 customers by lifetime value
+SELECT c.customer_id,
+       ROUND(SUM(o.order_amount),2) AS lifetime_value
+FROM customers c
+JOIN orders o USING (customer_id)
+WHERE o.status = 'Completed'
+GROUP BY c.customer_id
+ORDER BY lifetime_value DESC
+LIMIT 10;
+
+screenshots/CLV_result.png
