@@ -53,4 +53,6 @@ GROUP BY c.customer_id
 ORDER BY lifetime_value DESC
 LIMIT 10;
 
-# screenshots/CLV_result.png
+### Customer Lifetime Value (Top 10)
+
+![CLV Result](screenshots/CLV_result.png)
