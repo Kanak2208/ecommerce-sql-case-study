@@ -57,3 +57,18 @@ LIMIT 10;
 ### Customer Lifetime Value (Top 10)
 
 ![CLV Result](screenshots/CLV_result.png)
+
+```bash
+-- Customers inactive > 90 days (churn risk)
+SELECT c.customer_id,
+       MAX(o.order_date) AS last_order_date,
+       DATEDIFF(CURDATE(), MAX(o.order_date)) AS days_since_last_order
+FROM customers c
+JOIN orders o USING (customer_id)
+GROUP BY c.customer_id
+HAVING MAX(o.order_date) < CURDATE() - INTERVAL 90 DAY;
+```
+### Customers inactive - (Churn Risk)
+![Churn Risk Result](screenshotsss/Churn_risk.png)
+
+
