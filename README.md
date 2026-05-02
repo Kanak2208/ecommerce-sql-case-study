@@ -62,7 +62,7 @@ ORDER BY lifetime_value DESC
 LIMIT 10;
 ```
 
-![CLV Result](screenshots/CLV_result.png)
+![CLV Result](screenshotsss/CLV_result.png)
 
 ---
 
@@ -78,7 +78,7 @@ GROUP BY c.customer_id
 HAVING MAX(o.order_date) < CURDATE() - INTERVAL 90 DAY;
 ```
 
-![Churn Risk Result](screenshots/Churn_risk.png)
+![Churn Risk Result](screenshotsss/Churn_risk.png)
 
 ---
 
